@@ -16,14 +16,6 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-
-async def reply(message):
-    reply = f'{message.author.mention} reminder' 
-    await message.channel.send(reply) 
-
-@client.event
-async def on_message(message):
-    if client.user in message.mentions: # 話しかけられたかの判定
-        await reply(message) # 返信する非同期関数を実行
-
+    
+    
 bot.run(token)
