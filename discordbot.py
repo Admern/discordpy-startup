@@ -6,7 +6,7 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # bot起動時処理
-@client.event
+@bot.event
 async def on_ready():
     channel = client.get_channel(802142210581594123)
     await channel.send("turn on")
