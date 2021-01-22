@@ -17,7 +17,8 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
 
-async def book(ctx):
-    await ctx.send('reminder')
+async def reply(message):
+    reply = f'{message.author.mention} 呼んだ？' 
+    await message.channel.send(reply) 
 
 bot.run(token)
