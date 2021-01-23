@@ -23,10 +23,6 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-
 # 返信する非同期関数を定義
 async def reply(message):
     reply = f'{message.author.mention} reminder' # 返信メッセージの作成
@@ -37,5 +33,9 @@ async def reply(message):
 async def on_message(message):
     if bot.user in message.mentions: # 話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
 
 bot.run(token)
