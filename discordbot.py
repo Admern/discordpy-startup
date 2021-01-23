@@ -39,7 +39,7 @@ async def on_message(message):
     if message.author.bot:
         return
     if message.content == delete:
-        await delete(*,5)
+        message.delete
         return
     await message.channel.send("received a message")
     
