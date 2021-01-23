@@ -38,7 +38,7 @@ async def on_message(message):
         return
     if message.author.bot:
         return
-    if message.content == delete:
+    if message.content == "delete":
         await bot.message.channel.send("destroy")
         return
     await message.channel.send("received a message")
