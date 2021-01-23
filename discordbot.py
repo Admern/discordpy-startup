@@ -42,7 +42,8 @@ async def on_message(message):
         await message.channel.send("destroy")
         await message.delete()
         return
-    await message.channel.send("received a message")
+    if message == CHANNEL_ID
+        await message.channel.send("received a message")
     
 
 @bot.command()
