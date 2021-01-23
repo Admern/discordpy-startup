@@ -18,6 +18,12 @@ async def reply(message):
     reply = f'{message.author.mention} reminder from {message.id}' # 返信メッセージの作成
     await message.channel.send(reply) # 返信メッセージを送信
 
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+    
+
 @bot.event
 # bot起動時に実行されるイベントハンドラを定義
 async def on_ready():
@@ -50,9 +56,5 @@ async def on_message(message):
 #            return
 #        await message.channel.send("received a message")
 
-
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
 
 bot.run(token)
