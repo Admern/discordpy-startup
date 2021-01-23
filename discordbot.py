@@ -14,21 +14,20 @@ async def greet():
 
 # 返信する非同期関数を定義
 async def reply(message):
-    reply = f'{message.author.mention} is your name' # 返信メッセージの作成
-    await message.channel.send(reply.format(ctx.message.author.mention)) # 返信メッセージを送信
+    reply = f'{message.author.mention} reminder from {message.author.id}' # 返信メッセージの作成
+    await message.channel.send(reply) # 返信メッセージを送信
 
 @bot.event
 # bot起動時に実行されるイベントハンドラを定義
 async def on_ready():
     await greet() 
-    
+
 # 挨拶する非同期関数を実行
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@bot.event
 # 発言時に実行されるイベントハンドラを定義
 async def on_message(message):
     if bot.user in message.mentions: # 話しかけられたかの判定
