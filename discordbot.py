@@ -41,7 +41,7 @@ async def on_message(message):
             return
         if message.content == "delete":
             await message.channel.send("destroy")
-            await message.delete(*,5)
+            await message.delete(5)
             return
         
 #        if message.content == "test":
