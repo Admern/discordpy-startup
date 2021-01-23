@@ -1,3 +1,4 @@
+import discord.py
 from discord.ext import commands
 import os
 import traceback
@@ -13,7 +14,7 @@ async def greet():
     await channel.send('turn on')
 
 # bot起動時に実行されるイベントハンドラを定義
-@bot.event
+@client.event
 async def on_ready():
     await greet() # 挨拶する非同期関数を実行
 
