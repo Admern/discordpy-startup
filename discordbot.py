@@ -45,8 +45,8 @@ async def on_message(message):
     if message.content == "test":
         await message.channel.send(message.channel)
         return
-    if message.id == CHANNEL_ID
-        await message.channel.send("received a message")
+#    if message.id == CHANNEL_ID
+#        await message.channel.send("received a message")
     
 
 @bot.command()
