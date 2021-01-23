@@ -39,16 +39,16 @@ async def on_message(message):
             return
         if message.author.bot:
             return
-        if message.content == "delete":
-            await message.channel.send("destroy")
-            await asyncio.sleep(5)
-            await message.delete()
-            return
+#        if message.content == "delete":
+        await message.channel.send("delete message after 5secs")
+        await asyncio.sleep(5)
+        await message.delete()
+        return
         
 #        if message.content == "test":
 #            await message.channel.send(f'{message.channel})
 #            return
-        await message.channel.send("received a message")
+#        await message.channel.send("received a message")
 
 
 @bot.command()
