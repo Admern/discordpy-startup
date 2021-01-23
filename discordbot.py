@@ -36,7 +36,7 @@ async def on_message(message):
         await reply(message) # 返信する非同期関数を実行
     if message.author.bot:
         return
-        await message.channel.send("メッセージを受信！")    
+        await message.channel.send("received a message)    
 
 @bot.command()
 async def ping(ctx):
