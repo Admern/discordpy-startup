@@ -1,7 +1,7 @@
 from discord.ext import commands
 import os
 import traceback
-import time
+import asyncio
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -41,7 +41,8 @@ async def on_message(message):
             return
         if message.content == "delete":
             await message.channel.send("destroy")
-            await message.delete(5)
+            await asyncio.sleep(5)
+            await message.delete()
             return
         
 #        if message.content == "test":
