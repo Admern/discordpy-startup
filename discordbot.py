@@ -33,19 +33,20 @@ async def on_command_error(ctx, error):
 @bot.event
 # 発言時に実行されるイベントハンドラを定義
 async def on_message(message):
-    if bot.user in message.mentions: #話しかけられたかの判定
-        await reply(message) # 返信する非同期関数を実行
-        return
-    if message.author.bot:
-        return
-    if message.content == "delete":
-        await message.channel.send("destroy")
-        await message.delete()
-        return
-#    if message.content == "test":
-#        await message.channel.send(f'{message.channel})
-#        return
     if message.channel.id == CHANNEL_ID:
+        if bot.user in message.mentions: #話しかけられたかの判定
+            await reply(message) # 返信する非同期関数を実行
+            return
+        if message.author.bot:
+            return
+        if message.content == "delete":
+            await message.channel.send("destroy")
+            await message.delete()
+            return
+        
+#        if message.content == "test":
+#            await message.channel.send(f'{message.channel})
+#            return
         await message.channel.send("received a message")
 
 
