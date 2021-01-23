@@ -1,6 +1,7 @@
 from discord.ext import commands
 import os
 import traceback
+import time
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -36,6 +37,9 @@ async def on_message(message):
         await reply(message) # 返信する非同期関数を実行
         return
     if message.author.bot:
+        return
+    if message.content == delete:
+        await delete(*,5)
         return
     await message.channel.send("received a message")
     
