@@ -37,7 +37,7 @@ async def on_message(message):
         return
     if message.author.bot:
         return
-    await message.channel.send("おはよ！")
+    await message.channel.send("received a message")
     
 
 @bot.command()
