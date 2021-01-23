@@ -43,7 +43,7 @@ async def on_message(message):
         await message.delete()
         return
     if message.content == "test":
-        await message.channel.send(message.channel)
+        await message.channel.send(f'{message.channel})
         return
 #    if message.id == CHANNEL_ID
 #        await message.channel.send("received a message")
