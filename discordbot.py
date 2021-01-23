@@ -47,10 +47,10 @@ async def on_message(message):
             return
 #        if message.content == "delete":
         await message.channel.send("delete a message after 5secs")
-        await asyncio.sleep(5)
+        await asyncio.sleep(300)
         await message.delete()
         return
-        
+
 #        if message.content == "test":
 #            await message.channel.send(f'{message.channel})
 #            return
