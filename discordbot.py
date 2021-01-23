@@ -14,7 +14,7 @@ async def greet():
 
 # 返信する非同期関数を定義
 async def reply(message):
-    reply = f'{message.author.mention} reminder from {message.author.id}' # 返信メッセージの作成
+    reply = f'{message.author.mention} reminder from {message.id}' # 返信メッセージの作成
     await message.channel.send(reply) # 返信メッセージを送信
 
 @bot.event
