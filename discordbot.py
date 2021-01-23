@@ -22,12 +22,14 @@ async def reply(message):
 async def on_ready():
     await greet() 
 
+@bot.event
 # 挨拶する非同期関数を実行
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
+@bot.event
 # 発言時に実行されるイベントハンドラを定義
 async def on_message(message):
     if bot.user in message.mentions: # 話しかけられたかの判定
