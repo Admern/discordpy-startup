@@ -32,8 +32,11 @@ async def on_command_error(ctx, error):
 @bot.event
 # 発言時に実行されるイベントハンドラを定義
 async def on_message(message):
-    if bot.user in message.mentions: # 話しかけられたかの判定
+    if bot.user in message.mentions: #話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行
+    if message.author.bot:
+        return
+        await message.channel.send("メッセージを受信！")    
 
 @bot.command()
 async def ping(ctx):
