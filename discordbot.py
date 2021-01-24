@@ -11,11 +11,11 @@ CHANNEL_ID = 802142210581594123
 # 任意のチャンネルで挨拶する非同期関数を定義
 async def greet():
     channel = bot.get_channel(CHANNEL_ID)
-    await channel.send('turn on')
+    await channel.send(turn on')
 
 # 返信する非同期関数を定義
 async def reply(message):
-    reply = f'{message.author.mention} reminder from {message.id}' # 返信メッセージの作成
+    reply = f'{message.author.mention} your id is {message.id}' # 返信メッセージの作成
     await message.channel.send(reply) # 返信メッセージを送信
 
 
