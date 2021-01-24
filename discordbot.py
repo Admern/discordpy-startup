@@ -15,7 +15,7 @@ async def greet():
 
 # 返信する非同期関数を定義
 async def reply(message):
-    reply = f'{message.author.mention} your id is {message.id}' # 返信メッセージの作成
+    reply = f'{message.author.mention}\nyour id is {message.id}' # 返信メッセージの作成
     await message.channel.send(reply) # 返信メッセージを送信
 
 
@@ -46,7 +46,7 @@ async def on_message(message):
         if message.author.bot:
             return
 #        if message.content == "delete":
-        await message.channel.send("delete a message after 5mins")
+#        await message.channel.send("delete a message after 5mins")
         await asyncio.sleep(300)
         await message.delete()
         return
