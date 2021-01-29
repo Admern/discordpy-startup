@@ -56,12 +56,6 @@ async def on_message(message):
         channel = client.get_channel(CHANNEL_ID)
         await channel.send(f'現在時刻'{now}'です') 
         return
-
-    if message.content == "test":
-        await message.channel.send(f'{message.channel})
-        return
-    await message.channel.send("received a message")
-
 #        if message.content == "test":
 #            await message.channel.send(f'{message.channel})
 #            return
