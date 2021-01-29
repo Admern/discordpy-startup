@@ -43,7 +43,7 @@ async def on_message(message):
     
     if message.channel.id == CHANNEL_ID:
         if message.content == "test":
-            await message.channel.send(f'{switchingReceive}) #チャンネルID送信
+            await message.channel.send(f"{switchingReceive}") #test
             return
                                        
         if message.content == "/break":
@@ -67,7 +67,7 @@ async def on_message(message):
             return
             
 #        if message.content == "test":
-#            await message.channel.send(f'{message.channel}) #チャンネルID送信
+#            await message.channel.send(f'{message.channel}') #チャンネルID送信
 #            return
 #        await message.channel.send("received a message")
 
