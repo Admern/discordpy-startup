@@ -42,6 +42,14 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     
     if message.channel.id == CHANNEL_ID:
+        if message.content == "/break"
+            await message.channel.send(f'{message.channel}) #チャンネルID送信
+#            switchingReceive =  False
+#            await message.channel.send("bot have a break for 5minites. _(:3」∠)_")
+#            await asyncio.sleep(10)
+#            switchingReceive = True
+#            await message.channel.send("break is over")
+            return
 
         if bot.user in message.mentions: #話しかけられたかの判定
             await reply(message) # 返信する非同期関数を実行
