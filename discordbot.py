@@ -43,7 +43,8 @@ async def on_message(message):
     
     if message.channel.id == CHANNEL_ID:
         if message.content == "/test":
-            await message.channel.send(f"bool is {switchingReceive}") #test
+            await message.channel.send(f"`bot have a break for 5minites. _(:3」∠)_`\nbool is {switchingReceive}")
+            await message.channel.send(f"bool is {switchingReceive}")
             return
                                        
         if message.content == "/break":
