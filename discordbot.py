@@ -57,7 +57,7 @@ async def on_message(message):
             return
 #        if message.content == "delete":
 #        await message.channel.send("delete a message after 5mins")
-        if switchingReceive = True
+        if switchingReceive = True:
             await asyncio.sleep(300)
             await message.delete()
             return
