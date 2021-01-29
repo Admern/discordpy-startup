@@ -42,7 +42,7 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     
     if message.channel.id == CHANNEL_ID:
-        if message.content == "test":
+        if message.content == "/test":
             await message.channel.send(f"bool is {switchingReceive}") #test
             return
                                        
