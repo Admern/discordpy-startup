@@ -5,7 +5,6 @@ import asyncio
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-now = datetime.now().strftime('%H:%M')
 
 CHANNEL_ID = 802142210581594123
 
