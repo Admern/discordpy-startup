@@ -5,7 +5,7 @@ import asyncio
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-switchingReceive
+switchingReceive = None
 
 CHANNEL_ID = 802142210581594123
 
