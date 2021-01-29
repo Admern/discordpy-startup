@@ -55,7 +55,7 @@ async def on_message(message):
             
             await message.channel.send(f"`削除しないメッセージを記述してください`")
             def ignoreMessageCheck(m):
-                    return m.channel == ignoreMessageChannel 
+                return m.channel == ignoreMessageChannel 
             msg = await client.wait_for("message", check=ignoreMessageCheck)
             await channel.send("削除対象から除外しました".format(msg))
             return
