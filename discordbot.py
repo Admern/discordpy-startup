@@ -5,6 +5,7 @@ import asyncio
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+now = datetime.now().strftime('%H:%M')
 
 CHANNEL_ID = 802142210581594123
 
@@ -22,7 +23,7 @@ async def reply(message):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-    
+
 
 @bot.event
 # bot起動時に実行されるイベントハンドラを定義
@@ -50,6 +51,15 @@ async def on_message(message):
         await asyncio.sleep(300)
         await message.delete()
         return
+            
+    if now == '07:00':
+    channel = client.get_channel(CHANNEL_ID)
+    await channel.send(f'現在時刻'{now}'です')  
+
+    if message.content == "test":
+        await message.channel.send(f'{message.channel})
+        return
+    await message.channel.send("received a message")
 
 #        if message.content == "test":
 #            await message.channel.send(f'{message.channel})
