@@ -44,7 +44,7 @@ async def on_message(message):
     if message.channel.id == CHANNEL_ID:
         if message.content == "/break":
             switchingReceive =  False
-            await message.channel.send("bot have a break for 5minites. `_(:3」∠)_`")
+            await message.channel.send("`bot have a break for 5minites. _(:3」∠)_`")
             await asyncio.sleep(10)
             switchingReceive = True
             await message.channel.send("break is over")
@@ -57,9 +57,10 @@ async def on_message(message):
             return
 #        if message.content == "delete":
 #        await message.channel.send("delete a message after 5mins")
-        await asyncio.sleep(300)
-        await message.delete()
-        return
+        if switchingReceive = True
+            await asyncio.sleep(300)
+            await message.delete()
+            return
             
 #        if message.content == "test":
 #            await message.channel.send(f'{message.channel}) #チャンネルID送信
