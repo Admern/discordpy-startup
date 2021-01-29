@@ -52,10 +52,6 @@ async def on_message(message):
         await message.delete()
         return
             
-    if now == '07:00':
-        channel = client.get_channel(CHANNEL_ID)
-        await channel.send(f'現在時刻'{now}'です') 
-        return
 #        if message.content == "test":
 #            await message.channel.send(f'{message.channel})
 #            return
