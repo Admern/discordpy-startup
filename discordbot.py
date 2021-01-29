@@ -5,7 +5,6 @@ import asyncio
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-switchingReceive = None
 
 CHANNEL_ID = 802142210581594123
 
@@ -40,16 +39,11 @@ async def on_command_error(ctx, error):
 @bot.event
 # 発言時に実行されるイベントハンドラを定義
 async def on_message(message):
-    
+
     if message.channel.id == CHANNEL_ID:
-                                       
-        if message.content == "/break":
-            await message.channel.send(f"bool is {switchingReceive}")
-            switchingReceive = False
-            await message.channel.send(f"`bot have a break for 5minites. _(:3」∠)_`\nbool is {switchingReceive}")
-            await asyncio.sleep(10)
-            switchingReceive = True
-            await message.channel.send(f"break is over\nbool is {switchingReceive}")
+        
+        if message.content == "/message":
+            await message.channel.send(f"'削除しないメッセージを記述してください'")
             return
 
         if bot.user in message.mentions: #話しかけられたかの判定
