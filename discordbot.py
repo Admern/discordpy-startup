@@ -39,18 +39,27 @@ async def on_command_error(ctx, error):
 @bot.event
 # 発言時に実行されるイベントハンドラを定義
 async def on_message(message):
+    if message.content.startswith('$greet'):
+        channel = message.channel
+        await channel.send('Say hello!')
 
+        def check(m):
+            return m.content == 'hello' and m.channel == channel
+
+        msg = await client.wait_for('message', check=check)
+        await channel.send('Hello {.author}!'.format(msg))
     
-    if message.channel.id == CHANNEL_ID:
-        if message.content == "/ignore":
-            ignoreMessageChannel = message.channel
-            
-            await message.channel.send(f"`削除しないメッセージを記述してください`")
-                def ignoreMessageCheck(m):
-                    return m.channel == ignoreMessageChannel 
-            msg = await client.wait_for("message", check=ignoreMessageCheck)
-            await channel.send("削除対象から除外しました".format(msg))
-            return
+#    if message.channel.id == CHANNEL_ID:
+#        if message.content == "/ignore":
+#            ignoreMessageChannel = message.channel
+#            
+#            await message.channel.send(f"`削除しないメッセージを記述してください`")
+#                def ignoreMessageCheck(m):
+#                    return m.channel == ignoreMessageChannel 
+#            msg = await client.wait_for("message", check=ignoreMessageCheck)
+#            await channel.send("削除対象から除外しました".format(msg))
+#            return
+        
         if bot.user in message.mentions: #話しかけられたかの判定
             await reply(message) # 返信する非同期関数を実行
             return
