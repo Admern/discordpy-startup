@@ -44,7 +44,7 @@ async def on_message(message):
     if message.channel.id == CHANNEL_ID:
         if message.content == "/break":
             switchingReceive = False
-            await message.channel.send("`bot have a break for 5minites. _(:3」∠)_`")
+            await message.channel.send(f"`bot have a break for 5minites. _(:3」∠)_`\nboolean is {switchingReceive}")
             await asyncio.sleep(10)
             switchingReceive = True
             await message.channel.send(f"break is over\nboolean is {switchingReceive}")
