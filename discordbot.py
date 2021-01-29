@@ -38,8 +38,8 @@ async def on_command_error(ctx, error):
 
 @bot.event
 # 発言時に実行されるイベントハンドラを定義
-#async def on_message(message):
-#    if message.channel.id == CHANNEL_ID:
+async def on_message(message):
+    if message.channel.id == CHANNEL_ID:
 #        if message.content.startswith('$greet'):
 #            channel = message.channel
 #            await channel.send('Say hello!')
