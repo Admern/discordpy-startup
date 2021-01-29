@@ -42,7 +42,7 @@ async def on_message(message):
 
     if message.channel.id == CHANNEL_ID:
         if message.content == "/ignore":
-            ignoreMessageChannel = message
+            ignoreMessageChannel = message.channel
             
             await message.channel.send(f"`削除しないメッセージを記述してください`")
                 def ignoreMessageCheck(m):
