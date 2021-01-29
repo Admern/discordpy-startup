@@ -39,17 +39,17 @@ async def on_command_error(ctx, error):
 @bot.event
 # 発言時に実行されるイベントハンドラを定義
 async def on_message(message):
-    if message.content.startswith('$greet'):
-        channel = message.channel
-        await channel.send('Say hello!')
+    if message.channel.id == CHANNEL_ID:
+        if message.content.startswith('$greet'):
+            channel = message.channel
+            await channel.send('Say hello!')
 
-        def check(m):
-            return m.content == 'hello' and m.channel == channel
+            def check(m):
+                return m.content == 'hello' and m.channel == channel
 
-        msg = await client.wait_for('message', check=check)
-        await channel.send('Hello {.author}!'.format(msg))
+            msg = await client.wait_for('message', check=check)
+            await channel.send('Hello {.author}!'.format(msg))
     
-#    if message.channel.id == CHANNEL_ID:
 #        if message.content == "/ignore":
 #            ignoreMessageChannel = message.channel
 #            
