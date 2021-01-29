@@ -43,15 +43,15 @@ async def on_message(message):
     
     if message.channel.id == CHANNEL_ID:
         if message.content == "test":
-            await message.channel.send(f"{switchingReceive}") #test
+            await message.channel.send(f"bool is {switchingReceive}") #test
             return
                                        
         if message.content == "/break":
             switchingReceive = False
-            await message.channel.send(f"`bot have a break for 5minites. _(:3」∠)_`\nboolean is {switchingReceive}")
+            await message.channel.send(f"`bot have a break for 5minites. _(:3」∠)_`\nbool is {switchingReceive}")
             await asyncio.sleep(10)
             switchingReceive = True
-            await message.channel.send(f"break is over\nboolean is {switchingReceive}")
+            await message.channel.send(f"break is over\nbool is {switchingReceive}")
             return
 
         if bot.user in message.mentions: #話しかけられたかの判定
