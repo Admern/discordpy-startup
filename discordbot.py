@@ -38,12 +38,12 @@ async def on_command_error(ctx, error):
 
 @bot.event
 # 発言時に実行されるイベントハンドラを定義
-async def on_message(message):
+async def on_message1(message):
 
     if message.channel.id == CHANNEL_ID:
         
         if message.content == "/message":
-            await message.channel.send(f"'削除しないメッセージを記述してください'")
+            await message.channel.send(f"`削除しないメッセージを記述してください`")
             return
 
         if bot.user in message.mentions: #話しかけられたかの判定
