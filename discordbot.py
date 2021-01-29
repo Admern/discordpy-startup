@@ -57,7 +57,7 @@ async def on_message(message):
             def ignoreMessageCheck(m):
                 return m.channel == ignoreMessageChannel 
             msg = await client.wait_for("message", check=ignoreMessageCheck)
-            await channel.send("削除対象から除外しました")
+            await message.channel.send("削除対象から除外しました")
         
         if bot.user in message.mentions: #話しかけられたかの判定
             await reply(message) # 返信する非同期関数を実行
