@@ -41,6 +41,15 @@ async def on_command_error(ctx, error):
 async def on_message(message):
 
     if message.channel.id == CHANNEL_ID:
+        if message.content == "/ignore":
+            ignoreMessageChannel = message
+            
+            await message.channel.send(f"`削除しないメッセージを記述してください`")
+                def ignoreMessageCheck(m):
+                    return m.channel == ignoreMessageChannel 
+            msg = await bot.wait_for("message", check=ignoreMessageCheck)
+            await channel.send("削除対象から除外しました".)
+            return
         if bot.user in message.mentions: #話しかけられたかの判定
             await reply(message) # 返信する非同期関数を実行
             return
