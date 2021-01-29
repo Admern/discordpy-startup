@@ -5,7 +5,7 @@ import asyncio
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-switchingReceive = True
+switchingReceive
 
 CHANNEL_ID = 802142210581594123
 
@@ -42,6 +42,10 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     
     if message.channel.id == CHANNEL_ID:
+        if message.content == "test":
+            await message.channel.send(f'{switchingReceive}) #チャンネルID送信
+            return
+                                       
         if message.content == "/break":
             switchingReceive = False
             await message.channel.send(f"`bot have a break for 5minites. _(:3」∠)_`\nboolean is {switchingReceive}")
