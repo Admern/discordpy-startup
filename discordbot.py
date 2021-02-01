@@ -9,9 +9,9 @@ token = os.environ['DISCORD_BOT_TOKEN']
 CHANNEL_ID = 802142210581594123
 
 # 任意のチャンネルで挨拶する非同期関数を定義
-async def greet():
-    channel = bot.get_channel(CHANNEL_ID)
-    await channel.send('turn on')
+#async def greet():
+#    channel = bot.get_channel(CHANNEL_ID)
+#    await channel.send('turn on')
 
 # 返信する非同期関数を定義
 async def reply(message):
